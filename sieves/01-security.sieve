@@ -4,7 +4,9 @@ require ["fileinto", "imap4flags", "vnd.proton.expire"];
 
 # Common subjects relevant to security events
 if header :contains "subject" ["security alert", "security notification", "login", "sign-on", 
-"sign-in", "sign in", "sign on", "email address", "email change", "password", "terms of service"] 
+"sign-in", "sign in", "sign on", "email address", "email change", "password", "terms of service",
+"reset", "recovery key", "verify", "verification", "email removed", "new device", "email removal",
+"access code", "privacy request", "terms and conditions"] 
 {
     fileinto "Security";
     expire "day" "365";
